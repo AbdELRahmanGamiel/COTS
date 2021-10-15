@@ -22,6 +22,7 @@ void HLCD_VoidSendnumberLCD_8bit(u32 Copy_u8num);
 void HLCD_VoidSendnumberLCD_4bit(u32 Copy_u8num);
 void HLCD_VoidSetPosition_8bit(u8 Row ,u8 Column);
 void HLCD_VoidSetPosition_4bit(u8 Row ,u8 Column);
+void HLCD_voidWriteSpecialCharacters(u8* Copy_pu8Pattern , u8 Copy_u8PatternNumber , u8 Copy_u8XPos , u8 Copy_u8YPos);
 void HLCD_VoidInitLCD(char mode);
 void HLCD_VoidCLRLCD(char mode);
 

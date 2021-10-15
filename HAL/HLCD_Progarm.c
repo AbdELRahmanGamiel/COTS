@@ -205,5 +205,28 @@ void HLCD_VoidSetPosition_4bit(u8 Copy_u8Row ,u8 Copy_u8Column)
 	}
 }
 
+void HLCD_voidWriteSpecialCharacters(u8* Copy_pu8Pattern , u8 Copy_u8PatternNumber , u8 Copy_u8XPos , u8 Copy_u8YPos)
+{
+	u8 Local_CGRAM_Address , Copy_u8Iterator ;
+
+	/*calculate CG RAM Address whose each block is 8 bytes*/
+	 Local_CGRAM_Address = Copy_u8PatternNumber * 8 ;
+
+	 /*Send CG RAM Address command to the LCD*/
+	 HLCD_VoidSendCommand_8bit(Local_CGRAM_Address + 64);
+
+	 /*Write the Pattern into CGRAM*/
+	 for(Copy_u8Iterator = 0 ; Copy_u8Iterator < 8 ; Copy_u8Iterator++)
+	 {
+		 HLCD_VoidSendChar_8bit(Copy_pu8Pattern[Copy_u8Iterator]);
+	 }
+
+	 /*Go back to the DDRAM to display the Pattern*/
+	 HLCD_VoidSetPosition_8bit(Copy_u8XPos, Copy_u8YPos);
+
+	 /*Display the Pattern written in the LCD*/
+	 HLCD_VoidSendChar_8bit(Copy_u8PatternNumber);
+
+}
 
 

@@ -87,7 +87,7 @@ void __vector_1(void)
 
 void __vector_2(void)
 {
-	MGIE_VoidEable();
+	MGIE_VoidEnable();
 	MDIO_VoidSetPinValue(DIO_u8PORTB,DIO_u8PIN5, HIGH);
 	_delay_ms(500);
 	MDIO_VoidSetPinValue(DIO_u8PORTB,DIO_u8PIN5, LOW);
