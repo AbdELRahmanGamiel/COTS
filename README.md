@@ -13,4 +13,4 @@ This is AVR32 MCUs drivers and its contain the following drivers :
 6. Servise layer
   - SERVICE LAYER
 
-> Please use this code for learning not for copy and past cause copy and past doesn't make a real developer
+> Please use this code for learning not for copy and paste cause copy and paste doesn't make a real developer.
